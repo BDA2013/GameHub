@@ -4,7 +4,7 @@ interface Props {
   score: number;
 }
 
-export const CriticScore = ({ score }: Props) => {
+const CriticScore = ({ score }: Props) => {
   const color = score > 75 ? "green" : score > 50 ? "yellow" : "red";
 
   return (
@@ -13,3 +13,5 @@ export const CriticScore = ({ score }: Props) => {
     </Badge>
   );
 };
+
+export default CriticScore;
