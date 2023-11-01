@@ -2,6 +2,7 @@ export interface GameQuery {
   genre: Genre | null;
   platform: Platform | null;
   sortOrder: string;
+  searchText: string;
 }
 
 import { Grid, GridItem, HStack, Show } from "@chakra-ui/react";
@@ -29,7 +30,7 @@ function App() {
       }}
     >
       <GridItem area="nav">
-        <NavBar />
+        <NavBar onSearch={(searchText) => setGameQuery({...gameQuery, searchText})} />
       </GridItem>
       {/* Show function will display specific elements depending on the user's screen size */}
       <Show above="lg">
